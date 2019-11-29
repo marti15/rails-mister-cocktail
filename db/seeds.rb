@@ -12,16 +12,17 @@ Ingredient.destroy_all
 Dose.destroy_all
 
 puts 'Creating ingredients...'
-lemon = Ingredient.create(name: 'lemon')
-ice = Ingredient.create(name: 'ice')
-mint = Ingredient.create(name: 'mint leaves')
-peppermint = Ingredient.create(name: "Peppermint schnapps")
-cassis = Ingredient.create(name: "Creme de Cassis")
-jack = Ingredient.create(name: "Jack Daniels")
+Ingredient.create(name: 'lemon')
+Ingredient.create(name: 'ice')
+Ingredient.create(name: 'mint leaves')
+Ingredient.create(name: "Peppermint schnapps")
+Ingredient.create(name: "Creme de Cassis")
+Ingredient.create(name: "Jack Daniels")
 
 puts 'Creating cocktails...'
-6.times do |cocktail|
-  cocktail = Cocktail.create(name: Faker::TvShows::StarTrek.specie)
+30.times do
+  name = Faker::TvShows::StarTrek.specie + '' + rand(10).to_s + rand(10).to_s
+  Cocktail.create(name: name)
 end
 
 puts "#{Ingredient.count} ingredients"
